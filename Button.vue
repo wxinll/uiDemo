@@ -1,8 +1,8 @@
 <template>
 	<button class="g-button" 
-    :class="{loading:loading}">
+    :class="{loading:loading,[`icon-${iconPosition}`]:true}">
     <svg v-if="icon" class="icon" aria-hidden="true">
-      <use xlink:href="#icon-settings"></use>
+       <use :xlink:href="`#icon-${icon}`"></use>
     </svg>
     <span class="content">
       按钮
@@ -12,11 +12,18 @@
 
 <script>
 	export default {
-		props: ['icon','loading']
+    props: {
+      icon: String,
+      iconPosition: {
+        type: String,
+        default: 'left'
+      },
+      loading: Boolean
+    }
 	}
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 .g-button {
   font-size: var(--font-size);
@@ -34,5 +41,13 @@
 }
 .g-button:focus {
   outline: none;
+}
+.g-button.icon-right {
+  >.content{
+    order: 1;
+  }
+  >.icon{
+    order: 2;
+  }
 }
 </style>
