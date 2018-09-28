@@ -5,3 +5,6 @@
 - 包管理 npm
 - 打包-> parcel/webpack
 - 框架Vue
+
+### Q 
+- 依赖 parcel-bundler npm i -D安装找不到命令，-g安装解决
