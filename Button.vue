@@ -1,14 +1,23 @@
 <template>
-	<button class="g-button">按钮</button>
+	<button class="g-button" 
+    :class="{loading:loading}">
+    <svg v-if="icon" class="icon" aria-hidden="true">
+      <use xlink:href="#icon-settings"></use>
+    </svg>
+    <span class="content">
+      按钮
+    </span>
+  </button>
 </template>
 
 <script>
 	export default {
-		
+		props: ['icon','loading']
 	}
 </script>
 
 <style scoped>
+
 .g-button {
   font-size: var(--font-size);
   height: var(--button-height);
