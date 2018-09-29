@@ -26,12 +26,16 @@ export default {
 <style lang="scss" scoped>
 
 .g-button {
-  font-size: var(--font-size);
-  height: var(--button-height);
-  padding: 0 1em;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--border-color);
-  background: var(--button-bg);
+	font-size: var(--font-size);
+	height: var(--button-height);
+	padding: 0 1em;
+	border-radius: var(--border-radius);
+	border: 1px solid var(--border-color);
+	background: var(--button-bg);
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	vertical-align: middle;
 }
 .g-button:hover {
   border-color: var(--border-color-hover);
@@ -42,12 +46,22 @@ export default {
 .g-button:focus {
   outline: none;
 }
+.g-button {
+  .content{
+    order: 2;
+  }
+  .icon{
+    order: 1;
+    margin-right: .1em;
+  }
+}
 .g-button.icon-right {
   .content{
     order: 1;
   }
   .icon{
     order: 2;
+    margin-left: .1em;
   }
 }
 .g-button.loading{
