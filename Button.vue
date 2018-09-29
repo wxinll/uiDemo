@@ -11,16 +11,16 @@
 </template>
 
 <script>
-	export default {
-    props: {
-      icon: String,
-      iconPosition: {
-        type: String,
-        default: 'left'
-      },
-      loading: Boolean
-    }
+export default {
+	props: {
+		icon: String,
+		iconPosition: {
+			type: String,
+			default: 'left'
+		},
+		loading: Boolean
 	}
+}
 </script>
 
 <style lang="scss" scoped>
@@ -43,11 +43,24 @@
   outline: none;
 }
 .g-button.icon-right {
-  >.content{
+  .content{
     order: 1;
   }
-  >.icon{
+  .icon{
     order: 2;
   }
+}
+.g-button.loading{
+	.icon{
+		animation: rot 1.5s linear infinite;
+	}
+}
+@keyframes rot{
+	0%{
+		transform: rotate(0)
+	}
+	100%{
+		transform: rotate(360deg)
+	}
 }
 </style>
