@@ -1,13 +1,11 @@
 <template>
-	<button class="g-button" 
-    :class="{loading:loading,[`icon-${iconPosition}`]:true}">
-    <g-icon v-if="icon" :icon="icon"></g-icon>
-    <span class="content">
-      按钮
-    </span>
-  </button>
+	<button class="g-button" :class="{loading:loading,[`icon-${iconPosition}`]:true}">
+		<g-icon v-if="icon" :icon="icon"></g-icon>
+		<span class="content">
+			<slot></slot>
+		</span>
+	</button>
 </template>
-
 <script>
 export default {
 	props: {
@@ -16,13 +14,14 @@ export default {
 			type: String,
 			default: 'left'
 		},
-		loading: Boolean
+		loading: {
+			type: Boolean,
+			default: false
+		}
 	}
 }
 </script>
-
 <style lang="scss" scoped>
-
 .g-button {
 	font-size: var(--font-size);
 	height: var(--button-height);
@@ -35,43 +34,53 @@ export default {
 	align-items: center;
 	vertical-align: middle;
 }
+
 .g-button:hover {
-  border-color: var(--border-color-hover);
+	border-color: var(--border-color-hover);
 }
+
 .g-button:active {
-  background-color: var(--button-active-bg);
+	background-color: var(--button-active-bg);
 }
+
 .g-button:focus {
-  outline: none;
+	outline: none;
 }
+
 .g-button {
-  .content{
-    order: 2;
-  }
-  .icon{
-    order: 1;
-    margin-right: .1em;
-  }
+	.content {
+		order: 2;
+	}
+
+	.icon {
+		order: 1;
+		margin-right: .1em;
+	}
 }
+
 .g-button.icon-right {
-  .content{
-    order: 1;
-  }
-  .icon{
-    order: 2;
-    margin-left: .1em;
-  }
+	.content {
+		order: 1;
+	}
+
+	.icon {
+		order: 2;
+		margin-left: .1em;
+	}
 }
-.g-button.loading{
-	.icon{
+
+.g-button.loading {
+	.icon {
 		animation: rot 1.5s linear infinite;
 	}
 }
-@keyframes rot{
-	0%{
+
+@keyframes rot {
+	0% {
 		transform: rotate(0)
 	}
-	100%{
+
+	100% {
 		transform: rotate(360deg)
 	}
 }

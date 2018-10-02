@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+
 <head>
 	<meta charset="UTF-8">
 	<title>ui组件</title>
 </head>
+
+
 <style>
-	*{box-sizing: border-box;}
+	* {
+		box-sizing: border-box;
+	}
+
 	:root {
-      --button-height: 32px;
-      --font-size: 14px;
-      --button-bg: white;
-      --button-active-bg: #eee;
-      --border-radius: 4px;
-      --color: #333;
-      --border-color: #999;
-      --border-color-hover: #666;
-    }
-    .icon {
-       width: 1em; height: 1em;
-       vertical-align: -0.15em;
-       fill: currentColor;
-       overflow: hidden;
-    }
-     #app {
-      margin: 20px;
-    }
-    body {
-      font-size: var(--font-size);
-    }
+		--button-height: 32px;
+		--font-size: 14px;
+		--button-bg: white;
+		--button-active-bg: #eee;
+		--border-radius: 4px;
+		--color: #333;
+		--border-color: #999;
+		--border-color-hover: #666;
+	}
+
+	.icon {
+		width: 1em;
+		height: 1em;
+		vertical-align: -0.15em;
+		fill: currentColor;
+		overflow: hidden;
+	}
+
+	#app {
+		margin: 20px;
+	}
+
+	body {
+		font-size: var(--font-size);
+	}
 </style>
 
 <body>
 	<div id="app">
-		<g-button></g-button>
-		<g-button icon="settings"></g-button>
-		<g-button icon="loading" icon-position="right"></g-button>
-		<g-button icon="loading" :loading="true"></g-button>
-		<g-button disabled></g-button>
+		<g-button>默认按钮</g-button>
+		<g-button icon="settings">设置</g-button>
+		<g-button icon="loading" icon-position="right">加载图标</g-button>
+		<g-button icon="loading" :loading="true">加载中</g-button>
+		<g-button disabled>禁用</g-button>
 	</div>
 	<script src="//at.alicdn.com/t/font_856533_1crpwe6zpy.js"></script>
 	<script src="main.js"></script>
 </body>
+
 </html>
