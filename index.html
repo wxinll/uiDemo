@@ -42,21 +42,28 @@
 
 <body>
 	<div id="app">
-		<g-button>默认按钮</g-button>
-		<g-button icon="settings">设置</g-button>
-		<g-button icon="loading" icon-position="right">加载图标</g-button>
-		<g-button icon="loading" :loading="true">加载中</g-button>
-		<g-button disabled>禁用</g-button>
-		<g-button-group>
-			<g-button icon="left"></g-button>
-			<g-button>按钮1</g-button>
-			<g-button>按钮2</g-button>
-			<g-button>按钮3</g-button>
-			<g-button icon="right"></g-button>
-		</g-button-group>
+		<div>
+			<h4>默认图标</h4>
+			<g-button>默认按钮</g-button>
+			<g-button icon="settings">设置</g-button>
+			<g-button icon="settings" icon-position="right">图标右移</g-button>
+			<g-button icon="loading" icon-position="right">加载图标</g-button>
+			<g-button icon="loading" :loading="true">加载中</g-button>
+			<g-button disabled>禁用</g-button>
+		</div>
+		<div>
+			<h4>图标组</h4>
+			<g-button-group>
+				<g-button icon="left"></g-button>
+				<g-button>按钮1</g-button>
+				<g-button>按钮2</g-button>
+				<g-button>按钮3</g-button>
+				<g-button icon="right"></g-button>
+			</g-button-group>
+		</div>
 	</div>
 	<script src="//at.alicdn.com/t/font_856533_jq1mwn384co.js"></script>
-	<script src="main.js"></script>
+	<script src="src/main.js"></script>
 </body>
 
 </html>
