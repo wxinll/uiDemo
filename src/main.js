@@ -13,6 +13,8 @@ new Vue({
 
 //chai 单元测试
 import chai from 'chai'
+import spies from 'chai-spies'
+chai.use(spies)
 
 const should = chai.should()
 
@@ -80,4 +82,19 @@ const should = chai.should()
 	order.should.equal('2')
 	vm.$el.remove()
 	vm.$destroy()
+}
+
+{
+	const Constructor = Vue.extend(Button)
+	const vm = new Constructor({
+		propsData: {
+			icon: 'settings',
+			iconPosition: 'right'
+		}
+	})
+	const spy = chai.spy();
+	vm.$mount()
+	vm.$on('click',spy)
+	vm.$el.click()
+	spy.should.have.been.called()
 }
