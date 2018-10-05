@@ -9,7 +9,12 @@
 	</button>
 </template>
 <script>
+import Icon from './Icon.vue'
+
 export default {
+	conmponents: {
+		'g-icon': Icon
+	},
 	props: {
 		icon: String,
 		iconPosition: {
