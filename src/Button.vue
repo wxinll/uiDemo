@@ -12,7 +12,7 @@
 import Icon from './Icon.vue'
 
 export default {
-	conmponents: {
+	components: {
 		'g-icon': Icon
 	},
 	props: {
