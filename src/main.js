@@ -12,89 +12,89 @@ new Vue({
 })
 
 //chai 单元测试
-import chai from 'chai'
-import spies from 'chai-spies'
-chai.use(spies)
+// import chai from 'chai'
+// import spies from 'chai-spies'
+// chai.use(spies)
 
-const should = chai.should()
+// const should = chai.should()
 
-{
-	const Constructor = Vue.extend(Button)
-	const vm = new Constructor({
-		propsData: {
-			icon: 'settings'
-		}
-	})
-	vm.$mount()
-	let useElement = vm.$el.querySelector('use')
-	let href = useElement.getAttribute('xlink:href')
-	href.should.equal('#icon-settings')
-	vm.$el.remove()
-	vm.$destroy()
-}
+// {
+// 	const Constructor = Vue.extend(Button)
+// 	const vm = new Constructor({
+// 		propsData: {
+// 			icon: 'settings'
+// 		}
+// 	})
+// 	vm.$mount()
+// 	let useElement = vm.$el.querySelector('use')
+// 	let href = useElement.getAttribute('xlink:href')
+// 	href.should.equal('#icon-settings')
+// 	vm.$el.remove()
+// 	vm.$destroy()
+// }
 
-{
-	const Constructor = Vue.extend(Button)
-	const vm = new Constructor({
-		propsData: {
-			icon: 'loading'
-		}
-	})
-	vm.$mount()
-	let useElement = vm.$el.querySelector('use')
-	let href = useElement.getAttribute('xlink:href')
-	href.should.equal('#icon-loading')
-	vm.$el.remove()
-	vm.$destroy()
-}
+// {
+// 	const Constructor = Vue.extend(Button)
+// 	const vm = new Constructor({
+// 		propsData: {
+// 			icon: 'loading'
+// 		}
+// 	})
+// 	vm.$mount()
+// 	let useElement = vm.$el.querySelector('use')
+// 	let href = useElement.getAttribute('xlink:href')
+// 	href.should.equal('#icon-loading')
+// 	vm.$el.remove()
+// 	vm.$destroy()
+// }
 
-{
-	const div = document.createElement('div')
-	document.body.appendChild(div)
-	const Constructor = Vue.extend(Button)
-	const vm = new Constructor({
-		propsData: {
-			icon: 'loading',
-			loading: true
-		}
-	})
-	vm.$mount(div)
-	let icon = vm.$el.querySelector('.icon')
-	let animation = window.getComputedStyle(icon).animation
-	animation.should.exist
-	vm.$el.remove()
-	vm.$destroy()
-}
+// {
+// 	const div = document.createElement('div')
+// 	document.body.appendChild(div)
+// 	const Constructor = Vue.extend(Button)
+// 	const vm = new Constructor({
+// 		propsData: {
+// 			icon: 'loading',
+// 			loading: true
+// 		}
+// 	})
+// 	vm.$mount(div)
+// 	let icon = vm.$el.querySelector('.icon')
+// 	let animation = window.getComputedStyle(icon).animation
+// 	animation.should.exist
+// 	vm.$el.remove()
+// 	vm.$destroy()
+// }
 
-{
-	const div = document.createElement('div')
-	document.body.appendChild(div)
-	const Constructor = Vue.extend(Button)
-	const vm = new Constructor({
-		propsData: {
-			icon: 'settings',
-			iconPosition: 'right'
-		}
-	})
-	vm.$mount(div)
-	let icon = vm.$el.querySelector('.icon')
-	let order = window.getComputedStyle(icon).order
-	order.should.equal('2')
-	vm.$el.remove()
-	vm.$destroy()
-}
+// {
+// 	const div = document.createElement('div')
+// 	document.body.appendChild(div)
+// 	const Constructor = Vue.extend(Button)
+// 	const vm = new Constructor({
+// 		propsData: {
+// 			icon: 'settings',
+// 			iconPosition: 'right'
+// 		}
+// 	})
+// 	vm.$mount(div)
+// 	let icon = vm.$el.querySelector('.icon')
+// 	let order = window.getComputedStyle(icon).order
+// 	order.should.equal('2')
+// 	vm.$el.remove()
+// 	vm.$destroy()
+// }
 
-{
-	const Constructor = Vue.extend(Button)
-	const vm = new Constructor({
-		propsData: {
-			icon: 'settings',
-			iconPosition: 'right'
-		}
-	})
-	const spy = chai.spy();
-	vm.$mount()
-	vm.$on('click',spy)
-	vm.$el.click()
-	spy.should.have.been.called()
-}
+// {
+// 	const Constructor = Vue.extend(Button)
+// 	const vm = new Constructor({
+// 		propsData: {
+// 			icon: 'settings',
+// 			iconPosition: 'right'
+// 		}
+// 	})
+// 	const spy = chai.spy();
+// 	vm.$mount()
+// 	vm.$on('click',spy)
+// 	vm.$el.click()
+// 	spy.should.have.been.called
+// }
